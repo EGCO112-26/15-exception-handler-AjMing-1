@@ -20,10 +20,10 @@ class fail:public exception{ // Class จัดการ cinfail()
 	virtual const char* what() const throw() { 
 		    cin.clear();
 			cin.ignore(50,'\n');
-			return " "; 
+			return "STUPID!! You need to input 2 integers "; 
  } 
 
-};
+}f;
 
 
 int main(){
@@ -33,12 +33,12 @@ int main(){
  do{
 
     try{
-		
+	
 		cout<<"Enter 2 numbers: ";
 		cin>>x>>y;
 
 		/* Curated Exception Handling */
-		if(cin.fail()) throw 101 ; 
+		if(cin.fail()) throw f ; 
 		if(abs(x)>1000 ||abs(y)>1000) throw "Value out of range"; 
 		check0(y);
 		a=0;
@@ -53,6 +53,7 @@ int main(){
 			myarray= new double[50000000000];
 
 		}
+		a=0;
 		
 		
    }
@@ -72,7 +73,7 @@ int main(){
   }
   catch(exception &e){
   	cout<<e.what()<<endl;
-	a=0;
+
 
   }
 
